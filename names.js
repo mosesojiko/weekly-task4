@@ -6,8 +6,8 @@ https.get("https://jsonplaceholder.typicode.com/users",(res)=>{
     });
     res.on('end', () => {
          response = JSON.parse(response)
-         for (let a = 0; a < response.length; a++) {
-            console.log(response[a].name);   
-        }
+         return response.map((user) =>{
+             console.log(user.name)
+         })
     })
 })
